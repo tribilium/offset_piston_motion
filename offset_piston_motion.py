@@ -35,7 +35,7 @@ for index,angle in enumerate(angle, start=0):
         theta=angle
         x1 = r*cos(theta) # x-cooridnate of the crank: Point 1
         y1 = r*sin(theta) # y-cooridnate of the crank: Point 1
-        x2 = 0.5 # x-coordinate of the rod: Point 2
+        x2 = d # x-coordinate of the rod: Point 2
         # y-coordinate of the rod: Point 2
         y2 = r*sin(theta) + sqrt(  l**2 - (r*cos(theta)-d)**2  )
         
@@ -70,8 +70,7 @@ def animate(i):
 # call the animation
 ani = animation.FuncAnimation(fig, animate, init_func=init, frames=len(X1), interval=40, blit=True, repeat=False)
 ## to save animation, uncomment the line below:
-## ani.save('piston_motion_animation.mp4', fps=30, extra_args=['-vcodec', 'libx264'])
+## ani.save('offset_piston_motion_animation.mp4', fps=30, extra_args=['-vcodec', 'libx264'])
 
 #show the animation
 plt.show()
-
